@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Saurabh Tripathi — AI Product Engineer & Data Scientist</title>
-<meta name="description" content="Saurabh Tripathi — AI Product Engineer, Data Scientist, GenAI Builder. Founder of UpLinkAI. Open to Data Science, Product, and AI Automation roles."/>
+<title>Saurabh Tripathi — AI Software Engineer</title>
+<meta name="description" content="Saurabh Tripathi — AI Software Engineer & AI Product Engineer at EFOS. Builder of LLM systems, AI agents, and GenAI products. Founder of UpLinkAI."/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
 :root{
@@ -21,7 +20,11 @@ body{font-family:'Space Grotesk',sans-serif;background:var(--black);color:var(--
 
 /* CURSOR */
 #cur{position:fixed;width:10px;height:10px;background:var(--cyan);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;}
-#cur-r{position:fixed;width:32px;height:32px;border:1px solid rgba(0,245,255,0.6);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all 0.12s ease;opacity:0.5;}
+#cur-r{position:fixed;width:32px;height:32px;border:1px solid rgba(0,245,255,0.6);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width 0.18s ease,height 0.18s ease,opacity 0.18s ease,border-color 0.18s ease;opacity:0.5;}
+#cur-label{position:fixed;pointer-events:none;z-index:9997;transform:translate(-50%,-50%);font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.06em;color:var(--black);background:var(--cyan);padding:5px 12px 5px 10px;border-radius:20px;white-space:nowrap;opacity:0;transition:opacity 0.2s ease,transform 0.2s ease;display:flex;align-items:center;gap:5px;}
+#cur-label::after{content:'↗';font-size:11px;}
+#cur-label.show{opacity:1;}
+@media(hover:none){#cur,#cur-r,#cur-label{display:none;}body{cursor:auto;}}
 
 /* CANVAS */
 #bg-c{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
@@ -46,18 +49,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .mobile-menu.open{display:flex;}
 
 section{position:relative;z-index:1;}
+a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;}
+@media(prefers-reduced-motion:reduce){*{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;}html{scroll-behavior:auto;}}
 
 /* HERO */
 #hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:7rem 1.5rem 4rem;text-align:center;}
-.hero-inner{max-width:860px;width:100%;}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,245,255,0.06);border:1px solid rgba(0,245,255,0.2);color:var(--cyan);font-size:11px;font-weight:600;padding:5px 16px;border-radius:20px;font-family:'JetBrains Mono',monospace;letter-spacing:0.08em;margin-bottom:1.75rem;animation:fadeUp 0.6s 0.2s both;}
-.hero-badge::before{content:'';width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:blink 1.2s infinite;}
+.hero-inner{max-width:900px;width:100%;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.25);color:var(--green);font-size:11px;font-weight:600;padding:5px 16px;border-radius:20px;font-family:'JetBrains Mono',monospace;letter-spacing:0.08em;margin-bottom:1.75rem;animation:fadeUp 0.6s 0.2s both;}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%;animation:blink 1.2s infinite;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
 .hero-name{font-family:'Orbitron',monospace;font-size:clamp(36px,7vw,80px);font-weight:900;line-height:1;letter-spacing:-0.02em;margin-bottom:0.6rem;animation:fadeUp 0.6s 0.3s both;}
 .hero-name span{display:block;background:linear-gradient(135deg,var(--cyan) 0%,var(--blue) 45%,var(--purple) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .hero-typed{font-family:'JetBrains Mono',monospace;font-size:clamp(12px,1.8vw,16px);color:var(--cyan);letter-spacing:0.12em;margin-bottom:1.5rem;animation:fadeUp 0.6s 0.4s both;min-height:24px;}
 .hero-typed::after{content:'|';animation:blink 0.8s infinite;}
-.hero-desc{font-size:clamp(14px,1.8vw,17px);color:var(--muted);max-width:580px;margin:0 auto 2.5rem;line-height:1.75;animation:fadeUp 0.6s 0.5s both;}
+.hero-desc{font-size:clamp(14px,1.8vw,17px);color:var(--muted);max-width:620px;margin:0 auto 2.5rem;line-height:1.75;animation:fadeUp 0.6s 0.5s both;}
+.hero-desc b{color:var(--text);font-weight:600;}
 .hero-roles{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem;animation:fadeUp 0.6s 0.55s both;}
 .role-chip{font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;border:1px solid;letter-spacing:0.04em;}
 .rc-cyan{background:rgba(0,245,255,0.08);border-color:rgba(0,245,255,0.3);color:var(--cyan);}
@@ -66,9 +72,9 @@ section{position:relative;z-index:1;}
 .rc-green{background:rgba(16,185,129,0.08);border-color:rgba(16,185,129,0.3);color:var(--green);}
 .rc-amber{background:rgba(245,158,11,0.08);border-color:rgba(245,158,11,0.3);color:var(--amber);}
 .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.6s 0.6s both;}
-.btn-p{padding:12px 32px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:var(--black);font-weight:700;font-size:13px;border:none;border-radius:4px;cursor:pointer;text-decoration:none;letter-spacing:0.05em;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 0 28px rgba(0,245,255,0.28);}
+.btn-p{padding:12px 32px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:var(--black);font-weight:700;font-size:13px;border:none;border-radius:4px;cursor:none;text-decoration:none;letter-spacing:0.05em;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 0 28px rgba(0,245,255,0.28);}
 .btn-p:hover{transform:translateY(-3px);box-shadow:0 0 48px rgba(0,245,255,0.45);}
-.btn-o{padding:12px 32px;background:transparent;border:1px solid rgba(0,245,255,0.25);color:var(--text);font-weight:600;font-size:13px;border-radius:4px;cursor:pointer;text-decoration:none;letter-spacing:0.05em;transition:all 0.2s;}
+.btn-o{padding:12px 32px;background:transparent;border:1px solid rgba(0,245,255,0.25);color:var(--text);font-weight:600;font-size:13px;border-radius:4px;cursor:none;text-decoration:none;letter-spacing:0.05em;transition:all 0.2s;}
 .btn-o:hover{border-color:var(--cyan);color:var(--cyan);}
 .float-cards{display:flex;gap:12px;justify-content:center;margin-top:3.5rem;flex-wrap:wrap;animation:fadeUp 0.6s 0.75s both;}
 .fc{background:rgba(13,31,53,0.85);border:1px solid var(--border);border-radius:12px;padding:14px 20px;display:flex;align-items:center;gap:10px;backdrop-filter:blur(12px);transition:transform 0.3s,border-color 0.3s;}
@@ -137,6 +143,8 @@ section{position:relative;z-index:1;}
 .tcard-date{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);background:rgba(0,245,255,0.05);border:1px solid var(--border);padding:3px 10px;border-radius:20px;white-space:nowrap;}
 .current-badge{font-size:10px;font-weight:700;padding:3px 10px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);color:var(--green);border-radius:20px;}
 .tcard-desc{color:var(--muted);font-size:13px;line-height:1.7;margin-bottom:10px;}
+.tcard-desc ul{padding-left:18px;margin:0;}
+.tcard-desc li{margin-bottom:5px;}
 .tcard-tags{display:flex;flex-wrap:wrap;gap:6px;}
 
 /* PROJECTS */
@@ -158,7 +166,8 @@ section{position:relative;z-index:1;}
 .pc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;}
 .pc-feat{font-size:10px;font-weight:600;padding:3px 9px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);color:var(--green);border-radius:4px;}
 .pc-stat{display:flex;gap:12px;padding-top:10px;border-top:1px solid var(--border);flex-wrap:wrap;}
-.pc-stat-item{font-size:11px;color:var(--muted);}<br>.pc-stat-item span{color:var(--cyan);font-weight:700;font-family:'Orbitron',monospace;font-size:13px;}
+.pc-stat-item{font-size:11px;color:var(--muted);}
+.pc-stat-item span{color:var(--cyan);font-weight:700;font-family:'Orbitron',monospace;font-size:13px;}
 
 /* UPLINKAI */
 #uplinkai{background:linear-gradient(135deg,rgba(0,245,255,0.03) 0%,rgba(139,92,246,0.03) 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
@@ -248,23 +257,24 @@ footer a{color:var(--cyan);text-decoration:none;}
 
 <div id="cur"></div>
 <div id="cur-r"></div>
+<div id="cur-label"></div>
 <canvas id="bg-c"></canvas>
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">
+  <a href="#" class="nav-logo" data-cursor="Home">
     <span class="nl1">SAURABH TRIPATHI</span>
-    <span class="nl2">AI Engineer · Data Scientist · Builder</span>
+    <span class="nl2">AI Software Engineer · Builder</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#uplinkai">UpLinkAI</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about" data-cursor="View">About</a></li>
+    <li><a href="#skills" data-cursor="View">Skills</a></li>
+    <li><a href="#experience" data-cursor="View">Experience</a></li>
+    <li><a href="#projects" data-cursor="View">Projects</a></li>
+    <li><a href="#uplinkai" data-cursor="View">UpLinkAI</a></li>
+    <li><a href="#contact" data-cursor="View">Contact</a></li>
   </ul>
-  <a href="mailto:saurabhtripathi8127@gmail.com" class="nav-cta">Hire Me</a>
+  <a href="mailto:saurabhtripathi8127@gmail.com" class="nav-cta" data-cursor="Email">Hire Me</a>
   <div class="hamburger" onclick="toggleMenu()" id="ham">
     <span></span><span></span><span></span>
   </div>
@@ -282,33 +292,33 @@ footer a{color:var(--cyan);text-decoration:none;}
 <!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
-    <div class="hero-badge"><span></span> Available for Opportunities — Dec 2024</div>
+    <div class="hero-badge"><span></span> PPO Received — AI Software Engineer @ EFOS</div>
     <h1 class="hero-name">
       <span>SAURABH</span>
       <span>TRIPATHI</span>
     </h1>
     <p class="hero-typed" id="typed-el"></p>
-    <p class="hero-desc">Pre-final year B.Tech (CSE–Data Science) student building the future with Generative AI, full-stack systems, and data-driven products. Founder & CEO of UpLinkAI — 5000+ students community.</p>
+    <p class="hero-desc">Product-focused B.Tech (Data Science) student and IBM Data Science learner building <b>LLM systems, AI agents, and GenAI products</b>. Converted a 6-month internship at EFOS into a full-time PPO for AI Software Engineer / AI Product Engineer. Now working in the Founder's Office on AI product strategy, growth analytics, and deployment of AI-powered education platforms.</p>
     <div class="hero-roles">
-      <span class="role-chip rc-cyan">Data Scientist</span>
-      <span class="role-chip rc-blue">Data Analyst</span>
-      <span class="role-chip rc-purple">AI Product Engineer</span>
-      <span class="role-chip rc-green">AI Automation Builder</span>
-      <span class="role-chip rc-amber">Product Developer</span>
+      <span class="role-chip rc-cyan">AI Software Engineer</span>
+      <span class="role-chip rc-blue">AI Product Engineer</span>
+      <span class="role-chip rc-purple">Data Scientist</span>
+      <span class="role-chip rc-green">GenAI Builder</span>
+      <span class="role-chip rc-amber">Product Strategist</span>
     </div>
     <div class="hero-btns">
-      <a href="#projects" class="btn-p">View My Work</a>
-      <a href="#uplinkai" class="btn-o">See UpLinkAI</a>
-      <a href="mailto:saurabhtripathi8127@gmail.com" class="btn-o">Get In Touch</a>
+      <a href="#projects" class="btn-p" data-cursor="View">View My Work</a>
+      <a href="#uplinkai" class="btn-o" data-cursor="View">See UpLinkAI</a>
+      <a href="mailto:saurabhtripathi8127@gmail.com" class="btn-o" data-cursor="Email">Get In Touch</a>
     </div>
     <div class="float-cards">
       <div class="fc" style="animation:floatY 4s ease-in-out infinite;">
-        <span class="fc-icon">🤖</span>
-        <div><div class="fc-num">150+</div><div class="fc-lbl">AI Workshops</div></div>
+        <span class="fc-icon">✅</span>
+        <div><div class="fc-num">PPO</div><div class="fc-lbl">Full-Time Offer @ EFOS</div></div>
       </div>
       <div class="fc" style="animation:floatY 4s 0.5s ease-in-out infinite;">
-        <span class="fc-icon">👥</span>
-        <div><div class="fc-num">5K+</div><div class="fc-lbl">Students Reached</div></div>
+        <span class="fc-icon">🤖</span>
+        <div><div class="fc-num">150+</div><div class="fc-lbl">AI Workshops Delivered</div></div>
       </div>
       <div class="fc" style="animation:floatY 4s 1s ease-in-out infinite;">
         <span class="fc-icon">🏆</span>
@@ -316,7 +326,7 @@ footer a{color:var(--cyan);text-decoration:none;}
       </div>
       <div class="fc" style="animation:floatY 4s 1.5s ease-in-out infinite;">
         <span class="fc-icon">🚀</span>
-        <div><div class="fc-num">6+</div><div class="fc-lbl">Live Products</div></div>
+        <div><div class="fc-num">500+</div><div class="fc-lbl">Students on UpLinkAI</div></div>
       </div>
     </div>
   </div>
@@ -328,17 +338,17 @@ footer a{color:var(--cyan);text-decoration:none;}
     <div class="stag">01. About</div>
     <div class="about-grid reveal">
       <div class="about-text">
-        <h2 class="stitle">Building <em>AI-First</em> Products<br/>From Scratch</h2>
-        <p>I'm a <span>Pre-final year B.Tech student</span> in Computer Science (Data Science) at Lamrin Tech Skills University with a CGPA of 8.24. I build at the intersection of <span>AI, data, and product thinking</span> — turning ideas into working systems end to end.</p>
-        <p>I founded <span>UpLinkAI</span> — an AI-driven EdTech platform with <span>5000+ students</span> in our community, currently in MVP stage with active users, a resume model, and a working website. As Founder & CEO I handle everything — from product design and development to community growth.</p>
-        <p>I've delivered <span>150+ AI & GenAI workshops</span>, built no-code automation pipelines, integrated LLMs into enterprise apps, and worked as a <span>Technical Program Associate at EFOS</span> (current). I demonstrate <b>leadership, design thinking, and the ability to ship products from zero to one.</b></p>
+        <h2 class="stitle">From <em>Intern</em> to<br/>AI Software Engineer</h2>
+        <p>I'm a <span>Pre-final year B.Tech student</span> in Computer Science (Data Science), CGPA 8.5, and an <span>IBM Data Science learner</span>. I build at the intersection of AI, data, and product — shipping LLM systems, AI agents, and GenAI-powered products end to end.</p>
+        <p>My 6-month internship at <span>EFOS</span> converted into a full-time <b>PPO for AI Software Engineer / AI Product Engineer</b>. I now work in the <span>Founder's Office</span> — driving AI product strategy, user growth analytics, and deployment of AI-powered education platforms used across schools and colleges.</p>
+        <p>Alongside that, I founded <span>UpLinkAI</span> — a GenAI career guidance platform now live with <span>500+ active students</span> across <span>9+ partner colleges</span>. I own everything end to end: product design, LLM integration, analytics, and growth.</p>
         <div class="open-to">
           <h4>🟢 Open To</h4>
           <div class="open-roles">
+            <span class="open-role">AI Software Engineer</span>
+            <span class="open-role">AI Product Engineer</span>
             <span class="open-role">Data Scientist</span>
-            <span class="open-role">Data Analyst</span>
-            <span class="open-role">AI/ML Engineer</span>
-            <span class="open-role">Product Developer</span>
+            <span class="open-role">ML Engineer</span>
             <span class="open-role">AI Automation Engineer</span>
             <span class="open-role">GenAI Product Manager</span>
           </div>
@@ -346,10 +356,10 @@ footer a{color:var(--cyan);text-decoration:none;}
       </div>
       <div>
         <div class="about-stats">
-          <div class="astat"><div class="num">4+</div><div class="lbl">Internships</div></div>
+          <div class="astat"><div class="num">8.5</div><div class="lbl">CGPA</div></div>
           <div class="astat"><div class="num">150+</div><div class="lbl">AI Workshops</div></div>
-          <div class="astat"><div class="num">5K+</div><div class="lbl">Community</div></div>
-          <div class="astat"><div class="num">8.24</div><div class="lbl">CGPA</div></div>
+          <div class="astat"><div class="num">3+</div><div class="lbl">Industry Roles</div></div>
+          <div class="astat"><div class="num">1</div><div class="lbl">PPO Secured</div></div>
         </div>
       </div>
     </div>
@@ -360,48 +370,76 @@ footer a{color:var(--cyan);text-decoration:none;}
 <section id="skills">
   <div class="sw">
     <div class="stag">02. Skills</div>
-    <h2 class="stitle reveal">Technical <em>Arsenal</em></h2>
+    <h2 class="stitle reveal">Technical &amp; Product <em>Arsenal</em></h2>
     <div class="skills-grid">
       <div class="sg reveal">
         <div class="sg-icon">💻</div>
-        <div class="sg-title">Languages & Web</div>
+        <div class="sg-title">Programming</div>
         <div class="sg-chips">
-          <span class="chip chip-cyan">Python</span><span class="chip chip-cyan">JavaScript</span><span class="chip chip-cyan">SQL</span><span class="chip chip-cyan">HTML5</span><span class="chip chip-cyan">CSS3</span><span class="chip chip-cyan">Node.js</span>
+          <span class="chip chip-cyan">Python</span><span class="chip chip-cyan">SQL</span><span class="chip chip-cyan">JavaScript</span><span class="chip chip-cyan">PHP</span><span class="chip chip-cyan">HTML/CSS</span><span class="chip chip-cyan">React</span>
         </div>
       </div>
       <div class="sg reveal">
         <div class="sg-icon">🧠</div>
-        <div class="sg-title">AI / ML Frameworks</div>
+        <div class="sg-title">AI / GenAI</div>
         <div class="sg-chips">
-          <span class="chip chip-purple">TensorFlow</span><span class="chip chip-purple">PyTorch</span><span class="chip chip-purple">Scikit-learn</span><span class="chip chip-purple">LangChain</span><span class="chip chip-purple">OpenAI API</span><span class="chip chip-purple">Gemini API</span>
+          <span class="chip chip-purple">OpenAI API</span><span class="chip chip-purple">Gemini API</span><span class="chip chip-purple">LLM Applications</span><span class="chip chip-purple">AI Systems</span><span class="chip chip-purple">Prompt Engineering</span><span class="chip chip-purple">LangChain</span>
         </div>
       </div>
       <div class="sg reveal">
-        <div class="sg-icon">⚡</div>
-        <div class="sg-title">GenAI & Automation</div>
+        <div class="sg-icon">⚙️</div>
+        <div class="sg-title">Machine Learning</div>
         <div class="sg-chips">
-          <span class="chip chip-pink">Prompt Engineering</span><span class="chip chip-pink">RAG</span><span class="chip chip-pink">Fine-tuning</span><span class="chip chip-pink">n8n</span><span class="chip chip-pink">Transformers</span><span class="chip chip-pink">Agentic AI</span>
+          <span class="chip chip-pink">Scikit-learn</span><span class="chip chip-pink">TensorFlow</span><span class="chip chip-pink">PyTorch</span>
         </div>
       </div>
       <div class="sg reveal">
         <div class="sg-icon">📊</div>
-        <div class="sg-title">Data Science & Analytics</div>
+        <div class="sg-title">Data Analysis &amp; Analytics</div>
         <div class="sg-chips">
-          <span class="chip chip-blue">Power BI</span><span class="chip chip-blue">Pandas</span><span class="chip chip-blue">NumPy</span><span class="chip chip-blue">Matplotlib</span><span class="chip chip-blue">MySQL</span><span class="chip chip-blue">Google Colab</span><span class="chip chip-blue">Time Series</span>
+          <span class="chip chip-blue">Pandas</span><span class="chip chip-blue">NumPy</span><span class="chip chip-blue">Excel</span><span class="chip chip-blue">EDA</span><span class="chip chip-blue">Data Cleaning</span><span class="chip chip-blue">Statistical Analysis</span>
         </div>
       </div>
       <div class="sg reveal">
-        <div class="sg-icon">🔧</div>
-        <div class="sg-title">Platforms & DevOps</div>
+        <div class="sg-icon">📈</div>
+        <div class="sg-title">Data Visualization &amp; BI</div>
         <div class="sg-chips">
-          <span class="chip chip-green">Firebase</span><span class="chip chip-green">Netlify</span><span class="chip chip-green">GitHub</span><span class="chip chip-green">Hasura</span><span class="chip chip-green">Nhost</span><span class="chip chip-green">IBM Cloud</span><span class="chip chip-green">Arduino</span><span class="chip chip-green">Render</span>
+          <span class="chip chip-green">Power BI</span><span class="chip chip-green">Tableau</span><span class="chip chip-green">Matplotlib</span><span class="chip chip-green">Dashboard Dev</span><span class="chip chip-green">KPI Tracking</span>
         </div>
       </div>
       <div class="sg reveal">
         <div class="sg-icon">🎯</div>
-        <div class="sg-title">Product & Leadership</div>
+        <div class="sg-title">Product Analytics &amp; Growth</div>
         <div class="sg-chips">
-          <span class="chip chip-amber">MVP Development</span><span class="chip chip-amber">Agile/Scrum</span><span class="chip chip-amber">Design Thinking</span><span class="chip chip-amber">Product Roadmapping</span><span class="chip chip-amber">Team Leadership</span><span class="chip chip-amber">Startup Ops</span>
+          <span class="chip chip-amber">Mixpanel</span><span class="chip chip-amber">Amplitude</span><span class="chip chip-amber">Google Analytics</span><span class="chip chip-amber">Funnel Analysis</span><span class="chip chip-amber">A/B Testing</span>
+        </div>
+      </div>
+      <div class="sg reveal">
+        <div class="sg-icon">🗺️</div>
+        <div class="sg-title">Product Strategy &amp; Management</div>
+        <div class="sg-chips">
+          <span class="chip chip-coral">Product Roadmapping</span><span class="chip chip-coral">MVP Development</span><span class="chip chip-coral">Feature Prioritization</span><span class="chip chip-coral">Stakeholder Comms</span><span class="chip chip-coral">Design Thinking</span>
+        </div>
+      </div>
+      <div class="sg reveal">
+        <div class="sg-icon">🗄️</div>
+        <div class="sg-title">Databases</div>
+        <div class="sg-chips">
+          <span class="chip chip-cyan">MySQL</span><span class="chip chip-cyan">Database Design</span><span class="chip chip-cyan">Google Sheets API</span>
+        </div>
+      </div>
+      <div class="sg reveal">
+        <div class="sg-icon">🔧</div>
+        <div class="sg-title">Tools &amp; Platforms</div>
+        <div class="sg-chips">
+          <span class="chip chip-purple">Firebase</span><span class="chip chip-purple">n8n</span><span class="chip chip-purple">REST APIs</span><span class="chip chip-purple">Git/GitHub</span><span class="chip chip-purple">ElevenLabs</span>
+        </div>
+      </div>
+      <div class="sg reveal">
+        <div class="sg-icon">🤝</div>
+        <div class="sg-title">Leadership &amp; Collaboration</div>
+        <div class="sg-chips">
+          <span class="chip chip-green">Team Coordination</span><span class="chip chip-green">Agile Execution</span><span class="chip chip-green">Program Management</span><span class="chip chip-green">Cross-functional Collab</span>
         </div>
       </div>
     </div>
@@ -420,16 +458,24 @@ footer a{color:var(--cyan);text-decoration:none;}
           <div class="tcard-head">
             <div>
               <div class="tcard-role">Technical Program Associate</div>
-              <div class="tcard-co">EFOS</div>
+              <div class="tcard-co">EFOS.in</div>
             </div>
             <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
               <span class="current-badge">🟢 Current</span>
               <span class="tcard-date">Dec 2025 – Present</span>
             </div>
           </div>
-          <p class="tcard-desc">Working as a Technical Program Associate contributing to AI and data-driven program development. Supporting technical implementation, program coordination, and stakeholder engagement across AI-focused initiatives.</p>
+          <div class="tcard-desc">
+            <ul>
+              <li>Received PPO after 6-month internship, transitioning to AI Software Engineer / AI Product Engineer role.</li>
+              <li>Scaled AI mentorship platform across schools and colleges, improving adoption, engagement, and retention using AI-driven features.</li>
+              <li>Built AI features, LLM systems, and AI agents using OpenAI APIs, LangChain, and prompt engineering.</li>
+              <li>Developed Power BI dashboards for KPI tracking, user analytics, and product insights.</li>
+              <li>Collaborated with engineering and product teams to ship AI-driven features and system improvements.</li>
+            </ul>
+          </div>
           <div class="tcard-tags">
-            <span class="chip chip-cyan">Program Management</span><span class="chip chip-cyan">AI Implementation</span><span class="chip chip-cyan">Technical Coordination</span><span class="chip chip-green">Current Role</span>
+            <span class="chip chip-cyan">LLM Systems</span><span class="chip chip-cyan">AI Agents</span><span class="chip chip-cyan">Power BI</span><span class="chip chip-green">PPO Recipient</span>
           </div>
         </div>
       </div>
@@ -438,30 +484,18 @@ footer a{color:var(--cyan);text-decoration:none;}
         <div class="tcard">
           <div class="tcard-head">
             <div>
-              <div class="tcard-role">Product Developer (Full Stack)</div>
-              <div class="tcard-co">Bridge Group Solution — On-site</div>
+              <div class="tcard-role">Full Stack Developer Intern</div>
+              <div class="tcard-co">Bridge Group Solution</div>
             </div>
-            <span class="tcard-date">Jul 2025 – Nov 2025</span>
+            <span class="tcard-date">Oct 2025 – Dec 2025</span>
           </div>
-          <p class="tcard-desc">Built enterprise-grade web applications as a full-stack intern. Developed scalable frontend and backend modules, integrated APIs, optimized UI/UX, and managed deployment workflows for client-facing products.</p>
+          <div class="tcard-desc">
+            <ul>
+              <li>Developed scalable web modules and backend APIs, enhancing platform reliability and performance.</li>
+            </ul>
+          </div>
           <div class="tcard-tags">
-            <span class="chip chip-cyan">JavaScript</span><span class="chip chip-cyan">Node.js</span><span class="chip chip-cyan">Firebase</span><span class="chip chip-cyan">SQL</span><span class="chip chip-cyan">REST APIs</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="titem reveal">
-        <div class="tcard">
-          <div class="tcard-head">
-            <div>
-              <div class="tcard-role">Implementation Intern</div>
-              <div class="tcard-co">Vega AI</div>
-            </div>
-            <span class="tcard-date">May 2025 – Jul 2025</span>
-          </div>
-          <p class="tcard-desc">Implemented GenAI-based client solutions, integrated LLMs into enterprise applications, handled custom API deployments, client feedback loops, requirement analysis and post-deployment maintenance.</p>
-          <div class="tcard-tags">
-            <span class="chip chip-purple">LLM Integration</span><span class="chip chip-purple">GenAI</span><span class="chip chip-purple">API Deployment</span><span class="chip chip-purple">Client Consulting</span>
+            <span class="chip chip-cyan">JavaScript</span><span class="chip chip-cyan">Backend APIs</span><span class="chip chip-cyan">Platform Reliability</span>
           </div>
         </div>
       </div>
@@ -475,9 +509,14 @@ footer a{color:var(--cyan);text-decoration:none;}
             </div>
             <span class="tcard-date">Sep 2024 – Feb 2025</span>
           </div>
-          <p class="tcard-desc">Delivered 150+ AI and prompt engineering workshops for professionals and students. Built no-code automation workflows via n8n, Power BI dashboards, and OpenAI-based systems. Received $600 performance scholarship for top-tier contribution and revenue-generating projects.</p>
+          <div class="tcard-desc">
+            <ul>
+              <li>Delivered 150+ AI and GenAI workshops, training students and developers, increasing platform engagement by 40%.</li>
+              <li>Built AI automation workflows, conversational systems, and LLM-based educational tools.</li>
+            </ul>
+          </div>
           <div class="tcard-tags">
-            <span class="chip chip-green">n8n Automation</span><span class="chip chip-green">Power BI</span><span class="chip chip-green">Prompt Engineering</span><span class="chip chip-green">OpenAI</span><span class="chip chip-amber">$600 Scholarship</span>
+            <span class="chip chip-green">n8n Automation</span><span class="chip chip-green">LLM Tools</span><span class="chip chip-amber">+40% Engagement</span>
           </div>
         </div>
       </div>
@@ -497,79 +536,48 @@ footer a{color:var(--cyan);text-decoration:none;}
         <div class="pc-top">
           <div class="pc-icon">🚀</div>
           <div class="pc-links">
-            <a href="https://uplinkai.in" target="_blank" class="pc-link" title="Live Site">↗</a>
+            <a href="https://uplinkai.in" target="_blank" class="pc-link" title="Live Site" data-cursor="Visit">↗</a>
           </div>
         </div>
-        <div class="pc-title">UpLinkAI — Full MVP EdTech Platform</div>
-        <div class="pc-desc">Founded, designed, and built a complete GenAI-powered EdTech platform. Full MVP with AI career bot, quiz system, career roadmap generator, resume model, portfolio builder, job matching, and personalized dashboards. 5000+ students onboarded to the community. Demonstrates end-to-end product ownership — ideation, UX design, development, deployment, and growth.</div>
+        <div class="pc-title">UpLinkAI — GenAI Career Guidance Platform</div>
+        <div class="pc-desc">Founded an AI-driven career guidance platform for student profiling, skill discovery, and personalized recommendations using GenAI. Designed a chatbot and quiz-based assessment system powered by LLMs for personalized learning insights, plus analytics dashboards for engagement tracking, funnel analysis, and product optimization.</div>
         <div class="pc-tags">
-          <span class="chip chip-cyan">JavaScript</span><span class="chip chip-cyan">Firebase</span><span class="chip chip-purple">OpenAI API</span><span class="chip chip-blue">Power BI</span><span class="chip chip-green">n8n</span><span class="chip chip-amber">Agile</span>
+          <span class="chip chip-cyan">LLM Chatbot</span><span class="chip chip-purple">OpenAI API</span><span class="chip chip-blue">Power BI</span><span class="chip chip-green">Funnel Analysis</span>
         </div>
         <div class="pc-stat">
-          <div class="pc-stat-item"><span>5K+</span> Students</div>
-          <div class="pc-stat-item"><span>MVP</span> Stage</div>
-          <div class="pc-stat-item"><span>6+</span> AI Tools</div>
-          <div class="pc-stat-item"><span>Live</span> Website</div>
+          <div class="pc-stat-item"><span>500+</span> Active Students</div>
+          <div class="pc-stat-item"><span>9+</span> Partner Colleges</div>
+          <div class="pc-stat-item"><span>MVP</span> Live Stage</div>
         </div>
-        <div style="margin-top:10px;"><span class="pc-feat">🌟 Founder & CEO — Built From Scratch</span></div>
+        <div style="margin-top:10px;"><span class="pc-feat">🌟 Founder — Built From Scratch</span></div>
       </div>
 
       <div class="pcard reveal">
         <div class="pc-top">
           <div class="pc-icon">🤖</div>
           <div class="pc-links">
-            <a href="https://uplinkai-chat.netlify.app/" target="_blank" class="pc-link">↗</a>
+            <a href="#" class="pc-link" data-cursor="Live">↗</a>
           </div>
         </div>
-        <div class="pc-title">GenAI Chat & Automation Platform</div>
-        <div class="pc-desc">Full-stack AI chatbot with real-time data sync via Nhost & Hasura. End-to-end automation pipelines for document summarization using LangChain and modular prompt frameworks. Live on Netlify.</div>
+        <div class="pc-title">EFOS Buddy — AI Powered Career Mentor Bot</div>
+        <div class="pc-desc">Built an AI-powered conversational assistant integrated within the EFOS education platform. Implemented an LLM-based career guidance system using prompt engineering and context-aware responses, and automated student mentorship workflows using AI agents and workflow automation tools.</div>
         <div class="pc-tags">
-          <span class="chip chip-purple">LangChain</span><span class="chip chip-purple">Gemini</span><span class="chip chip-green">Nhost</span><span class="chip chip-green">Hasura</span><span class="chip chip-pink">n8n</span>
+          <span class="chip chip-purple">LLM</span><span class="chip chip-purple">AI Agents</span><span class="chip chip-pink">Prompt Engineering</span><span class="chip chip-green">Workflow Automation</span>
         </div>
-        <div style="margin-top:10px;"><span class="pc-feat">⚡ Live Platform</span></div>
-      </div>
-
-      <div class="pcard reveal">
-        <div class="pc-top">
-          <div class="pc-icon">🗺️</div>
-          <div class="pc-links">
-            <a href="https://uplinkai.in" target="_blank" class="pc-link">↗</a>
-          </div>
-        </div>
-        <div class="pc-title">AI Career Roadmap Generator</div>
-        <div class="pc-desc">AI-powered tool inside UpLinkAI that generates personalized, step-by-step career roadmaps for students. Built with Claude API, no backend needed, deployed on Netlify. Part of the UpLinkAI MVP toolkit.</div>
-        <div class="pc-tags">
-          <span class="chip chip-cyan">HTML/CSS/JS</span><span class="chip chip-purple">Claude API</span><span class="chip chip-green">Netlify Functions</span>
-        </div>
-        <div style="margin-top:10px;"><span class="pc-feat">🎯 UpLinkAI Tool</span></div>
-      </div>
-
-      <div class="pcard reveal">
-        <div class="pc-top">
-          <div class="pc-icon">📝</div>
-          <div class="pc-links">
-            <a href="https://uplinkai-quizapp.onrender.com/" target="_blank" class="pc-link">↗</a>
-          </div>
-        </div>
-        <div class="pc-title">UpLinkAI Quiz & Skill Assessment App</div>
-        <div class="pc-desc">Responsive web quiz platform for skill evaluation and career profiling. Interactive quiz logic, backend data processing, real-time result feedback. Used by students inside the UpLinkAI platform.</div>
-        <div class="pc-tags">
-          <span class="chip chip-cyan">HTML/CSS/JS</span><span class="chip chip-cyan">Python</span><span class="chip chip-green">Render</span><span class="chip chip-blue">REST APIs</span>
-        </div>
-        <div style="margin-top:10px;"><span class="pc-feat">✅ Live & In Use</span></div>
+        <div style="margin-top:10px;"><span class="pc-feat">⚡ Live Inside EFOS Platform</span></div>
       </div>
 
       <div class="pcard reveal">
         <div class="pc-top">
           <div class="pc-icon">🗑️</div>
           <div class="pc-links">
-            <a href="https://github.com/saurabh" target="_blank" class="pc-link">⌥</a>
+            <a href="https://github.com/saurabh" target="_blank" class="pc-link" data-cursor="Code">⌥</a>
           </div>
         </div>
         <div class="pc-title">Smart Dustbin — IBM Challenge Finalist</div>
         <div class="pc-desc">IoT + ML solution for smart waste management. Real-time bin monitoring, route optimization, and time-series forecasting to predict bin fill levels using IBM Cloud dashboards.</div>
         <div class="pc-tags">
-          <span class="chip chip-amber">Arduino</span><span class="chip chip-amber">IoT</span><span class="chip chip-blue">IBM Cloud</span><span class="chip chip-purple">Time Series</span><span class="chip chip-blue">Pandas</span>
+          <span class="chip chip-amber">Arduino</span><span class="chip chip-amber">IoT</span><span class="chip chip-blue">IBM Cloud</span><span class="chip chip-purple">Time Series</span>
         </div>
         <div style="margin-top:10px;"><span class="pc-feat">🏆 IBM Challenge Finalist</span></div>
       </div>
@@ -578,13 +586,13 @@ footer a{color:var(--cyan);text-decoration:none;}
         <div class="pc-top">
           <div class="pc-icon">☀️</div>
           <div class="pc-links">
-            <a href="https://github.com/saurabh" target="_blank" class="pc-link">⌥</a>
+            <a href="https://github.com/saurabh" target="_blank" class="pc-link" data-cursor="Code">⌥</a>
           </div>
         </div>
         <div class="pc-title">ISRO Solar BIPV Assessment</div>
         <div class="pc-desc">Geospatial analysis using Cartosat-3 satellite imagery to estimate solar energy potential. Computer vision for rooftop extraction, 3D interactive maps with CesiumJS for sustainable urban energy planning.</div>
         <div class="pc-tags">
-          <span class="chip chip-green">CesiumJS</span><span class="chip chip-purple">TensorFlow</span><span class="chip chip-blue">Geospatial</span><span class="chip chip-amber">Satellite Imagery</span><span class="chip chip-purple">PyTorch</span>
+          <span class="chip chip-green">CesiumJS</span><span class="chip chip-purple">TensorFlow</span><span class="chip chip-blue">Geospatial</span><span class="chip chip-purple">PyTorch</span>
         </div>
         <div style="margin-top:10px;"><span class="pc-feat">🛰️ ISRO Research</span></div>
       </div>
@@ -597,25 +605,24 @@ footer a{color:var(--cyan);text-decoration:none;}
 <section id="uplinkai">
   <div class="ul-inner">
     <div class="ul-left reveal">
-      <div class="mvp-badge">🔥 MVP Stage — Active & Growing</div>
+      <div class="mvp-badge">🔥 MVP Stage — Active &amp; Growing</div>
       <div class="ul-tag">Flagship Venture</div>
       <h2 class="ul-title">Meet<br/><em>UpLinkAI</em></h2>
-      <p class="ul-desc">My own EdTech startup — an AI-powered career co-pilot for students. From portfolio building to internship hunting, UpLinkAI takes students from learning to earning. Built entirely from scratch: ideation, design, development, and community growth — all by me.</p>
+      <p class="ul-desc">My own GenAI career guidance platform — helping students discover skills, get AI-driven career recommendations, and prep for real opportunities. Built entirely from scratch: ideation, LLM integration, design, deployment, and college partnerships — all by me.</p>
       <div class="ul-metrics">
-        <div class="ul-m"><div class="mn">5K+</div><div class="ml">Students</div></div>
-        <div class="ul-m"><div class="mn">6+</div><div class="ml">AI Tools</div></div>
+        <div class="ul-m"><div class="mn">500+</div><div class="ml">Students</div></div>
+        <div class="ul-m"><div class="mn">9+</div><div class="ml">Colleges</div></div>
         <div class="ul-m"><div class="mn">MVP</div><div class="ml">Live Stage</div></div>
       </div>
-      <a href="https://uplinkai.in" target="_blank" class="ul-link">Visit uplinkai.in ↗</a>
+      <a href="https://uplinkai.in" target="_blank" class="ul-link" data-cursor="Visit">Visit uplinkai.in ↗</a>
     </div>
     <div class="ul-right reveal">
       <div class="ul-feats">
-        <div class="ul-f"><div class="ul-fi">🤖</div><div><div class="ul-ft">AI Career Bot</div><div class="ul-fd">Personalized GenAI-powered career guidance</div></div></div>
-        <div class="ul-f"><div class="ul-fi">🗺️</div><div><div class="ul-ft">Career Roadmap Generator</div><div class="ul-fd">AI-built personalized step-by-step plans</div></div></div>
-        <div class="ul-f"><div class="ul-fi">📄</div><div><div class="ul-ft">Resume Model</div><div class="ul-fd">Working AI resume builder and scorer</div></div></div>
-        <div class="ul-f"><div class="ul-fi">📝</div><div><div class="ul-ft">Portfolio Builder</div><div class="ul-fd">Build professional student portfolios</div></div></div>
-        <div class="ul-f"><div class="ul-fi">🎯</div><div><div class="ul-ft">Quiz & Skill Assessment</div><div class="ul-fd">Interactive learning & evaluation modules</div></div></div>
-        <div class="ul-f"><div class="ul-fi">💼</div><div><div class="ul-ft">Internship Matching</div><div class="ul-fd">Connect students with real opportunities</div></div></div>
+        <div class="ul-f"><div class="ul-fi">🤖</div><div><div class="ul-ft">AI Career Guidance Bot</div><div class="ul-fd">LLM-powered chatbot for personalized career direction</div></div></div>
+        <div class="ul-f"><div class="ul-fi">📝</div><div><div class="ul-ft">Quiz-Based Skill Assessment</div><div class="ul-fd">Personalized learning insights via LLM scoring</div></div></div>
+        <div class="ul-f"><div class="ul-fi">📊</div><div><div class="ul-ft">Engagement &amp; Funnel Analytics</div><div class="ul-fd">Dashboards for tracking adoption and drop-off</div></div></div>
+        <div class="ul-f"><div class="ul-fi">🎓</div><div><div class="ul-ft">College Partnerships</div><div class="ul-fd">Deployed and adopted across 9+ institutions</div></div></div>
+        <div class="ul-f"><div class="ul-fi">🧭</div><div><div class="ul-ft">Student Profiling</div><div class="ul-fd">GenAI-driven skill discovery and recommendations</div></div></div>
       </div>
     </div>
   </div>
@@ -631,7 +638,7 @@ footer a{color:var(--cyan);text-decoration:none;}
         <div class="edu-icon">🎓</div>
         <div class="edu-deg">B.Tech — CSE (Data Science)</div>
         <div class="edu-school">Lamrin Tech Skills University</div>
-        <div class="edu-score">CGPA: 8.24</div>
+        <div class="edu-score">CGPA: 8.5</div>
         <div class="edu-year">2023 – Present</div>
       </div>
       <div class="edu-card reveal">
@@ -651,11 +658,9 @@ footer a{color:var(--cyan);text-decoration:none;}
     </div>
     <div class="stag" style="margin-top:2.5rem;margin-bottom:1.25rem;">Certifications</div>
     <div class="certs-row">
-      <div class="cert reveal"><span class="ci">📊</span><div><div class="ct">Power BI</div><div class="cs">Udemy</div></div></div>
-      <div class="cert reveal"><span class="ci">🔬</span><div><div class="ct">Data Analytics</div><div class="cs">Coursera</div></div></div>
-      <div class="cert reveal"><span class="ci">🤖</span><div><div class="ct">Generative AI</div><div class="cs">Coursera</div></div></div>
-      <div class="cert reveal"><span class="ci">🏅</span><div><div class="ct">App Developer L5</div><div class="cs">NSDC/PMKVY — 98.14%</div></div></div>
-      <div class="cert reveal"><span class="ci">🌐</span><div><div class="ct">B2 English</div><div class="cs">EF SET</div></div></div>
+      <div class="cert reveal"><span class="ci">📊</span><div><div class="ct">Power BI Data Visualization</div><div class="cs">IBM SkillsBuild</div></div></div>
+      <div class="cert reveal"><span class="ci">💡</span><div><div class="ct">Design Thinking Workshop</div><div class="cs">IBM SkillsBuild</div></div></div>
+      <div class="cert reveal"><span class="ci">🏅</span><div><div class="ct">Application Developer L5</div><div class="cs">NSDC/PMKVY — Grade A</div></div></div>
     </div>
   </div>
 </section>
@@ -666,12 +671,10 @@ footer a{color:var(--cyan);text-decoration:none;}
     <div class="stag">06. Achievements</div>
     <h2 class="stitle reveal">Highlights &amp; <em>Awards</em></h2>
     <div class="ach-grid">
-      <div class="ach reveal"><span class="ach-icon">🏆</span><div class="ach-text"><strong>AIR 3 — IIIT Delhi 2025</strong>IndustrySolve Idea-Thon & Product-a-Thon under RIISE 2025, Team Tech Innovator.</div></div>
-      <div class="ach reveal"><span class="ach-icon">🎓</span><div class="ach-text"><strong>IIT Madras Qualified</strong>Qualified for BSc Data Science at IIT Madras via national entrance exam.</div></div>
-      <div class="ach reveal"><span class="ach-icon">💰</span><div class="ach-text"><strong>$600 Performance Scholarship</strong>Top-tier contribution at Cosmic365.AI for revenue-generating AI projects.</div></div>
+      <div class="ach reveal"><span class="ach-icon">🏆</span><div class="ach-text"><strong>AIR 3 — IIIT Delhi 2025</strong>IndustrySolve Idea-Thon & Product-a-Thon.</div></div>
+      <div class="ach reveal"><span class="ach-icon">🎓</span><div class="ach-text"><strong>IIT Madras Qualified</strong>Qualified national entrance exam for BSc Data Science at IIT Madras.</div></div>
       <div class="ach reveal"><span class="ach-icon">🏫</span><div class="ach-text"><strong>JNV Alumnus</strong>Alumnus of Jawahar Navodaya Vidyalaya — nationally recognized excellence school.</div></div>
-      <div class="ach reveal"><span class="ach-icon">🏃</span><div class="ach-text"><strong>Kho Kho Nationals</strong>Represented school and state at Kho Kho Nationals & BPL Cricket leagues.</div></div>
-      <div class="ach reveal"><span class="ach-icon">🌍</span><div class="ach-text"><strong>Vidya Vistar Mission</strong>Active member of VVM for community outreach and education empowerment.</div></div>
+      <div class="ach reveal"><span class="ach-icon">🌐</span><div class="ach-text"><strong>B2 English Proficiency</strong>Certified via EF SET.</div></div>
     </div>
   </div>
 </section>
@@ -681,31 +684,39 @@ footer a{color:var(--cyan);text-decoration:none;}
   <div class="contact-inner">
     <div class="stag">07. Contact</div>
     <h2 class="stitle reveal">Let's <em>Connect</em></h2>
-    <p class="reveal" style="color:var(--muted);font-size:14px;line-height:1.75;max-width:480px;margin:0 auto;">Open to Data Science, AI, and Product roles. Let's build something meaningful together.</p>
+    <p class="reveal" style="color:var(--muted);font-size:14px;line-height:1.75;max-width:480px;margin:0 auto;">Open to AI Software Engineer, Data Science, and Product roles. Let's build something meaningful together.</p>
     <div class="clinks reveal">
-      <a href="mailto:saurabhtripathi8127@gmail.com" class="clink"><span class="clink-icon">📧</span> Email</a>
-      <a href="https://linkedin.com/in/saurabh-tripathi" target="_blank" class="clink"><span class="clink-icon">💼</span> LinkedIn</a>
-      <a href="https://github.com/saurabh" target="_blank" class="clink"><span class="clink-icon">🐙</span> GitHub</a>
-      <a href="https://uplinkai.in" target="_blank" class="clink"><span class="clink-icon">🚀</span> UpLinkAI</a>
-      <a href="tel:+917234896280" class="clink"><span class="clink-icon">📱</span> Call</a>
+      <a href="mailto:saurabhtripathi8127@gmail.com" class="clink" data-cursor="Email"><span class="clink-icon">📧</span> Email</a>
+      <a href="https://linkedin.com/in/saurabh-tripathi" target="_blank" class="clink" data-cursor="Visit"><span class="clink-icon">💼</span> LinkedIn</a>
+      <a href="https://github.com/saurabh" target="_blank" class="clink" data-cursor="Visit"><span class="clink-icon">🐙</span> GitHub</a>
+      <a href="https://uplinkai.in" target="_blank" class="clink" data-cursor="Visit"><span class="clink-icon">🚀</span> UpLinkAI</a>
+      <a href="tel:+917234896280" class="clink" data-cursor="Call"><span class="clink-icon">📱</span> Call</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>Designed & Built by <a href="#">Saurabh Tripathi</a> — 2025</p>
-  <p>Founder @ <a href="https://uplinkai.in" target="_blank">uplinkai.in</a> · saurabhtripathi8127@gmail.com</p>
+  <p>Designed & Built by <a href="#">Saurabh Tripathi</a> — 2026</p>
+  <p>AI Software Engineer @ <a href="https://efos.in" target="_blank">EFOS</a> · Founder @ <a href="https://uplinkai.in" target="_blank">uplinkai.in</a> · saurabhtripathi8127@gmail.com</p>
 </footer>
 
 <script>
-/* CURSOR */
-const cur=document.getElementById('cur'),ring=document.getElementById('cur-r');
+/* CURSOR + LABEL */
+const cur=document.getElementById('cur'),ring=document.getElementById('cur-r'),label=document.getElementById('cur-label');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
-(function ar(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(ar);})();
-document.querySelectorAll('a,button,.pcard,.sg,.tcard,.fc,.ach').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{ring.style.width='52px';ring.style.height='52px';ring.style.opacity='0.8';});
-  el.addEventListener('mouseleave',()=>{ring.style.width='32px';ring.style.height='32px';ring.style.opacity='0.5';});
+(function ar(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;ring.style.left=rx+'px';ring.style.top=ry+'px';label.style.left=rx+'px';label.style.top=(ry-38)+'px';requestAnimationFrame(ar);})();
+
+document.querySelectorAll('a,button,.pcard,.sg,.tcard,.fc,.ach,.cert,.edu-card,.astat').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{
+    ring.style.width='52px';ring.style.height='52px';ring.style.opacity='0.8';
+    const txt=el.getAttribute('data-cursor');
+    if(txt){label.textContent=txt;label.classList.add('show');}
+  });
+  el.addEventListener('mouseleave',()=>{
+    ring.style.width='32px';ring.style.height='32px';ring.style.opacity='0.5';
+    label.classList.remove('show');
+  });
 });
 
 /* MOBILE MENU */
@@ -753,7 +764,7 @@ document.querySelectorAll('.pcard').forEach(c=>{
 });
 
 /* TYPED */
-const titles=['Data Scientist','AI Product Engineer','GenAI Builder','Data Analyst','AI Automation Engineer','Founder @ UpLinkAI'];
+const titles=['AI Software Engineer','AI Product Engineer','Data Scientist','GenAI Builder','Founder @ UpLinkAI'];
 let ti=0,ci=0,del=false,wait=0;
 const tel=document.getElementById('typed-el');
 setInterval(()=>{
@@ -764,7 +775,7 @@ setInterval(()=>{
 },80);
 
 /* COUNTERS */
-function animNum(el,v){let c=0;const s=v/55,tm=setInterval(()=>{c+=s;if(c>=v){c=v;clearInterval(tm);}el.textContent=Number.isInteger(v)?Math.floor(c):c.toFixed(2);},18);}
+function animNum(el,v){let c=0;const s=v/55,tm=setInterval(()=>{c+=s;if(c>=v){c=v;clearInterval(tm);}el.textContent=Number.isInteger(v)?Math.floor(c):c.toFixed(1);},18);}
 const cob=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.num').forEach(n=>{const v=parseFloat(n.textContent);if(!isNaN(v))animNum(n,v);});}});},{threshold:0.4});
 document.querySelectorAll('.about-stats').forEach(el=>cob.observe(el));
 </script>
