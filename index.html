@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Saurabh Tripathi — AI Software Engineer</title>
-<meta name="description" content="Saurabh Tripathi — AI Software Engineer & AI Product Engineer at EFOS. Builder of LLM systems, AI agents, and GenAI products. Founder of UpLinkAI."/>
+<meta name="description" content="Saurabh Tripathi — AI Software Trainee at EFOS (AI Software Engineer). Builder of LLM systems, AI agents, and GenAI products. Core team member at UpLinkAI."/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
 :root{
@@ -59,7 +59,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 .hero-badge::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%;animation:blink 1.2s infinite;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
 .hero-name{font-family:'Orbitron',monospace;font-size:clamp(36px,7vw,80px);font-weight:900;line-height:1;letter-spacing:-0.02em;margin-bottom:0.6rem;animation:fadeUp 0.6s 0.3s both;}
-.hero-name span{display:block;background:linear-gradient(135deg,var(--cyan) 0%,var(--blue) 45%,var(--purple) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-name span{display:block;background:linear-gradient(135deg,var(--cyan) 0%,var(--blue) 45%,var(--purple) 100%);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradientShift 6s ease-in-out infinite;}
+@keyframes gradientShift{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
 .hero-typed{font-family:'JetBrains Mono',monospace;font-size:clamp(12px,1.8vw,16px);color:var(--cyan);letter-spacing:0.12em;margin-bottom:1.5rem;animation:fadeUp 0.6s 0.4s both;min-height:24px;}
 .hero-typed::after{content:'|';animation:blink 0.8s infinite;}
 .hero-desc{font-size:clamp(14px,1.8vw,17px);color:var(--muted);max-width:620px;margin:0 auto 2.5rem;line-height:1.75;animation:fadeUp 0.6s 0.5s both;}
@@ -77,11 +78,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 .btn-o{padding:12px 32px;background:transparent;border:1px solid rgba(0,245,255,0.25);color:var(--text);font-weight:600;font-size:13px;border-radius:4px;cursor:none;text-decoration:none;letter-spacing:0.05em;transition:all 0.2s;}
 .btn-o:hover{border-color:var(--cyan);color:var(--cyan);}
 .float-cards{display:flex;gap:12px;justify-content:center;margin-top:3.5rem;flex-wrap:wrap;animation:fadeUp 0.6s 0.75s both;}
-.fc{background:rgba(13,31,53,0.85);border:1px solid var(--border);border-radius:12px;padding:14px 20px;display:flex;align-items:center;gap:10px;backdrop-filter:blur(12px);transition:transform 0.3s,border-color 0.3s;}
+.fc{background:rgba(13,31,53,0.85);border:1px solid var(--border);border-radius:12px;padding:14px 22px 14px 16px;display:flex;align-items:center;gap:12px;backdrop-filter:blur(12px);transition:transform 0.3s,border-color 0.3s;}
 .fc:hover{transform:translateY(-6px);border-color:rgba(0,245,255,0.3);}
-.fc-icon{font-size:18px;}
+.fc-bar{width:3px;align-self:stretch;border-radius:3px;flex-shrink:0;box-shadow:0 0 8px currentColor;}
 .fc-num{font-family:'Orbitron',monospace;font-size:20px;font-weight:900;color:var(--cyan);line-height:1;}
 .fc-lbl{color:var(--muted);font-size:10px;letter-spacing:0.05em;margin-top:2px;}
+
+.dot{width:6px;height:6px;border-radius:50%;display:inline-block;margin-right:7px;position:relative;top:-1px;}
+.dot-green{background:var(--green);box-shadow:0 0 6px var(--green);}
+.dot-amber{background:var(--amber);box-shadow:0 0 6px var(--amber);}
+.dot-cyan{background:var(--cyan);box-shadow:0 0 6px var(--cyan);}
 
 /* SECTION */
 .sw{max-width:1080px;margin:0 auto;padding:5rem 1.5rem;}
@@ -114,7 +120,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 .sg::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);transform:scaleX(0);transition:transform 0.4s;}
 .sg:hover::before{transform:scaleX(1);}
 .sg:hover{border-color:rgba(0,245,255,0.25);transform:translateY(-4px);box-shadow:var(--glow);}
-.sg-icon{font-size:24px;margin-bottom:10px;}
+.sg-icon{width:40px;height:40px;border-radius:9px;background:rgba(0,245,255,0.06);border:1px solid rgba(0,245,255,0.2);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:var(--cyan);letter-spacing:0.01em;margin-bottom:12px;}
 .sg-title{font-family:'Orbitron',monospace;font-size:11px;font-weight:700;color:var(--cyan);letter-spacing:0.1em;margin-bottom:12px;}
 .sg-chips{display:flex;flex-wrap:wrap;gap:6px;}
 .chip{font-size:10px;font-weight:600;padding:3px 10px;border-radius:20px;border:1px solid;letter-spacing:0.03em;transition:all 0.2s;}
@@ -153,11 +159,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 .pcard{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:1.5rem;transition:all 0.35s;position:relative;overflow:hidden;transform-style:preserve-3d;}
 .pcard::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at center,rgba(0,245,255,0.035) 0%,transparent 60%);opacity:0;transition:opacity 0.3s;pointer-events:none;}
 .pcard:hover::after{opacity:1;}
+.pcard::before{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(115deg,transparent,rgba(255,255,255,0.06),transparent);transform:skewX(-20deg);transition:left 0.7s ease;pointer-events:none;z-index:1;}
+.pcard:hover::before{left:140%;}
 .pcard:hover{border-color:rgba(0,245,255,0.3);transform:translateY(-7px);box-shadow:0 16px 50px rgba(0,0,0,0.45),0 0 30px rgba(0,245,255,0.08);}
 .pcard.featured{border-color:rgba(0,245,255,0.2);grid-column:span 2;}
 @media(max-width:768px){.pcard.featured{grid-column:span 1;}}
 .pc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;}
-.pc-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;background:rgba(0,245,255,0.07);border:1px solid rgba(0,245,255,0.15);}
+.pc-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:13px;font-family:'Orbitron',monospace;font-weight:900;letter-spacing:0.02em;background:rgba(0,245,255,0.07);border:1px solid rgba(0,245,255,0.15);color:var(--cyan);}
 .pc-links{display:flex;gap:6px;}
 .pc-link{width:30px;height:30px;border-radius:7px;background:rgba(255,255,255,0.04);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;text-decoration:none;transition:all 0.2s;}
 .pc-link:hover{background:rgba(0,245,255,0.1);border-color:var(--cyan);color:var(--cyan);}
@@ -187,7 +195,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 .ul-feats{display:flex;flex-direction:column;gap:10px;}
 .ul-f{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1rem 1.25rem;display:flex;align-items:center;gap:12px;transition:all 0.3s;}
 .ul-f:hover{border-color:rgba(139,92,246,0.35);transform:translateX(5px);}
-.ul-fi{width:38px;height:38px;border-radius:9px;background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.2);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.ul-fi{width:38px;height:38px;border-radius:9px;background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.2);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;color:var(--purple);letter-spacing:0.02em;flex-shrink:0;}
 .ul-ft{font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px;}
 .ul-fd{font-size:11px;color:var(--muted);}
 .mvp-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);color:var(--amber);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:0.75rem;letter-spacing:0.05em;}
@@ -197,7 +205,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 .edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
 .edu-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;transition:all 0.3s;}
 .edu-card:hover{border-color:rgba(0,245,255,0.25);transform:translateY(-4px);box-shadow:var(--glow);}
-.edu-icon{font-size:26px;margin-bottom:10px;}
+.edu-icon{width:40px;height:40px;border-radius:9px;background:rgba(0,245,255,0.06);border:1px solid rgba(0,245,255,0.2);display:flex;align-items:center;justify-content:center;font-family:'Orbitron',monospace;font-size:10px;font-weight:900;color:var(--cyan);margin-bottom:12px;}
 .edu-deg{font-family:'Orbitron',monospace;font-size:11px;font-weight:700;color:var(--cyan);margin-bottom:5px;letter-spacing:0.05em;}
 .edu-school{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px;}
 .edu-score{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--green);margin-bottom:6px;}
@@ -205,7 +213,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 .certs-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:2rem;}
 .cert{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:10px 16px;display:flex;align-items:center;gap:8px;transition:all 0.2s;}
 .cert:hover{border-color:rgba(0,245,255,0.25);transform:translateY(-2px);}
-.cert .ci{font-size:16px;}
+.cert .ci{color:var(--green);display:flex;align-items:center;}
 .cert .ct{font-size:12px;font-weight:600;color:var(--text);}
 .cert .cs{font-size:10px;color:var(--muted);}
 
@@ -214,7 +222,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 .ach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;}
 .ach{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;display:flex;align-items:flex-start;gap:10px;transition:all 0.3s;}
 .ach:hover{border-color:rgba(245,158,11,0.25);transform:translateY(-3px);}
-.ach-icon{font-size:20px;flex-shrink:0;margin-top:1px;}
+.ach-icon{width:9px;height:9px;flex-shrink:0;margin-top:5px;transform:rotate(45deg);}
+.ach-amber{background:var(--amber);box-shadow:0 0 8px rgba(245,158,11,0.5);}
+.ach-cyan{background:var(--cyan);box-shadow:0 0 8px rgba(0,245,255,0.5);}
+.ach-purple{background:var(--purple);box-shadow:0 0 8px rgba(139,92,246,0.5);}
+.ach-green{background:var(--green);box-shadow:0 0 8px rgba(16,185,129,0.5);}
 .ach-text{font-size:12.5px;color:var(--muted);line-height:1.6;}
 .ach-text strong{color:var(--amber);display:block;margin-bottom:2px;font-size:13px;}
 
@@ -225,16 +237,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 .clinks{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:2rem;}
 .clink{display:flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--border);border-radius:9px;padding:10px 18px;text-decoration:none;color:var(--text);font-size:13px;font-weight:600;transition:all 0.25s;}
 .clink:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,245,255,0.1);}
-.clink-icon{font-size:16px;}
+.clink-icon{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:var(--cyan);letter-spacing:0.03em;}
 
 /* FOOTER */
 footer{padding:1.5rem 2.5rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;background:var(--deep);position:relative;z-index:1;}
 footer p{font-size:12px;color:var(--muted);}
 footer a{color:var(--cyan);text-decoration:none;}
 
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s,transform 0.65s;}
-.reveal.visible{opacity:1;transform:translateY(0);}
+/* REVEAL — 3D perspective rotation instead of flat fade */
+.reveal{opacity:0;transform:perspective(1200px) translateY(46px) rotateX(-12deg);transform-origin:50% 100%;transition:opacity 0.85s cubic-bezier(.19,1,.22,1),transform 0.85s cubic-bezier(.19,1,.22,1);will-change:transform,opacity;}
+.reveal.visible{opacity:1;transform:perspective(1200px) translateY(0) rotateX(0deg);}
 
 /* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
@@ -264,7 +276,7 @@ footer a{color:var(--cyan);text-decoration:none;}
 <nav>
   <a href="#" class="nav-logo" data-cursor="Home">
     <span class="nl1">SAURABH TRIPATHI</span>
-    <span class="nl2">AI Software Engineer · Builder</span>
+    <span class="nl2">AI Software Trainee · Builder</span>
   </a>
   <ul class="nav-links">
     <li><a href="#about" data-cursor="View">About</a></li>
@@ -292,15 +304,15 @@ footer a{color:var(--cyan);text-decoration:none;}
 <!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
-    <div class="hero-badge"><span></span> PPO Received — AI Software Engineer @ EFOS</div>
+    <div class="hero-badge"><span></span> AI Software Trainee @ EFOS ·  AI Software Engineer (PPO)</div>
     <h1 class="hero-name">
       <span>SAURABH</span>
       <span>TRIPATHI</span>
     </h1>
     <p class="hero-typed" id="typed-el"></p>
-    <p class="hero-desc">Product-focused B.Tech (Data Science) student and IBM Data Science learner building <b>LLM systems, AI agents, and GenAI products</b>. Converted a 6-month internship at EFOS into a full-time PPO for AI Software Engineer / AI Product Engineer. Now working in the Founder's Office on AI product strategy, growth analytics, and deployment of AI-powered education platforms.</p>
+    <p class="hero-desc">Product-focused B.Tech (Computer Science – Data Science) student at Lamrin Tech Skills University, in collaboration with IBM, building <b>LLM systems, AI agents, and GenAI products</b>. Currently an AI Software Trainee at EFOS, working toward a PPO transition to AI Software Engineer. Building AI product features, growth analytics, and automated deployments for AI-powered education platforms.</p>
     <div class="hero-roles">
-      <span class="role-chip rc-cyan">AI Software Engineer</span>
+      <span class="role-chip rc-cyan">AI Software Trainee</span>
       <span class="role-chip rc-blue">AI Product Engineer</span>
       <span class="role-chip rc-purple">Data Scientist</span>
       <span class="role-chip rc-green">GenAI Builder</span>
@@ -313,20 +325,20 @@ footer a{color:var(--cyan);text-decoration:none;}
     </div>
     <div class="float-cards">
       <div class="fc" style="animation:floatY 4s ease-in-out infinite;">
-        <span class="fc-icon">✅</span>
-        <div><div class="fc-num">PPO</div><div class="fc-lbl">Full-Time Offer @ EFOS</div></div>
+        <div class="fc-bar" style="background:var(--green);"></div>
+        <div><div class="fc-num">PPO</div><div class="fc-lbl">secured @ EFOS</div></div>
       </div>
       <div class="fc" style="animation:floatY 4s 0.5s ease-in-out infinite;">
-        <span class="fc-icon">🤖</span>
+        <div class="fc-bar" style="background:var(--cyan);"></div>
         <div><div class="fc-num">150+</div><div class="fc-lbl">AI Workshops Delivered</div></div>
       </div>
       <div class="fc" style="animation:floatY 4s 1s ease-in-out infinite;">
-        <span class="fc-icon">🏆</span>
+        <div class="fc-bar" style="background:var(--amber);"></div>
         <div><div class="fc-num">AIR 3</div><div class="fc-lbl">IIIT Delhi 2025</div></div>
       </div>
       <div class="fc" style="animation:floatY 4s 1.5s ease-in-out infinite;">
-        <span class="fc-icon">🚀</span>
-        <div><div class="fc-num">500+</div><div class="fc-lbl">Students on UpLinkAI</div></div>
+        <div class="fc-bar" style="background:var(--purple);"></div>
+        <div><div class="fc-num">1,000+</div><div class="fc-lbl">Students on UpLinkAI</div></div>
       </div>
     </div>
   </div>
@@ -338,12 +350,12 @@ footer a{color:var(--cyan);text-decoration:none;}
     <div class="stag">01. About</div>
     <div class="about-grid reveal">
       <div class="about-text">
-        <h2 class="stitle">From <em>Intern</em> to<br/>AI Software Engineer</h2>
-        <p>I'm a <span>Pre-final year B.Tech student</span> in Computer Science (Data Science), CGPA 8.5, and an <span>IBM Data Science learner</span>. I build at the intersection of AI, data, and product — shipping LLM systems, AI agents, and GenAI-powered products end to end.</p>
-        <p>My 6-month internship at <span>EFOS</span> converted into a full-time <b>PPO for AI Software Engineer / AI Product Engineer</b>. I now work in the <span>Founder's Office</span> — driving AI product strategy, user growth analytics, and deployment of AI-powered education platforms used across schools and colleges.</p>
-        <p>Alongside that, I founded <span>UpLinkAI</span> — a GenAI career guidance platform now live with <span>500+ active students</span> across <span>9+ partner colleges</span>. I own everything end to end: product design, LLM integration, analytics, and growth.</p>
+        <h2 class="stitle">From <em>Trainee</em> to<br/>AI Software Engineer</h2>
+        <p>I'm a <span>final-year B.Tech student</span> in Computer Science (Data Science) at Lamrin Tech Skills University, Ropar — in collaboration with IBM — with a <span>9.0 CGPA</span>. I build at the intersection of AI, data, and product — shipping LLM systems, AI agents, and GenAI-powered products end to end.</p>
+        <p>I'm currently an <span>AI Software Trainee at EFOS</span>, working toward a <b>PPO transition to AI Software Engineer</b>. I built epinfoways.com, a fully automated website for EFOS Pvt Ltd, from scratch, and previously supported EFOS's AI mentorship platform across partner schools and colleges as part of a Technical Support role.</p>
+        <p>Alongside that, I'm a core team member on <span>UpLinkAI</span> — a GenAI career guidance platform that started as a college project and is now a DPIIT Startup India participant, live with <span>1,000+ students</span> across <span>9+ partner colleges</span>.</p>
         <div class="open-to">
-          <h4>🟢 Open To</h4>
+          <h4><span class="dot dot-green"></span>Open To</h4>
           <div class="open-roles">
             <span class="open-role">AI Software Engineer</span>
             <span class="open-role">AI Product Engineer</span>
@@ -356,10 +368,10 @@ footer a{color:var(--cyan);text-decoration:none;}
       </div>
       <div>
         <div class="about-stats">
-          <div class="astat"><div class="num">8.5</div><div class="lbl">CGPA</div></div>
+          <div class="astat"><div class="num">9.0</div><div class="lbl">CGPA</div></div>
           <div class="astat"><div class="num">150+</div><div class="lbl">AI Workshops</div></div>
           <div class="astat"><div class="num">3+</div><div class="lbl">Industry Roles</div></div>
-          <div class="astat"><div class="num">1</div><div class="lbl">PPO Secured</div></div>
+          <div class="astat"><div class="num">1</div><div class="lbl">PPO In Progress</div></div>
         </div>
       </div>
     </div>
@@ -373,70 +385,70 @@ footer a{color:var(--cyan);text-decoration:none;}
     <h2 class="stitle reveal">Technical &amp; Product <em>Arsenal</em></h2>
     <div class="skills-grid">
       <div class="sg reveal">
-        <div class="sg-icon">💻</div>
+        <div class="sg-icon">&lt;/&gt;</div>
         <div class="sg-title">Programming</div>
         <div class="sg-chips">
           <span class="chip chip-cyan">Python</span><span class="chip chip-cyan">SQL</span><span class="chip chip-cyan">JavaScript</span><span class="chip chip-cyan">PHP</span><span class="chip chip-cyan">HTML/CSS</span><span class="chip chip-cyan">React</span>
         </div>
       </div>
       <div class="sg reveal">
-        <div class="sg-icon">🧠</div>
+        <div class="sg-icon">AI</div>
         <div class="sg-title">AI / GenAI</div>
         <div class="sg-chips">
           <span class="chip chip-purple">OpenAI API</span><span class="chip chip-purple">Gemini API</span><span class="chip chip-purple">LLM Applications</span><span class="chip chip-purple">AI Systems</span><span class="chip chip-purple">Prompt Engineering</span><span class="chip chip-purple">LangChain</span>
         </div>
       </div>
       <div class="sg reveal">
-        <div class="sg-icon">⚙️</div>
+        <div class="sg-icon">ML</div>
         <div class="sg-title">Machine Learning</div>
         <div class="sg-chips">
           <span class="chip chip-pink">Scikit-learn</span><span class="chip chip-pink">TensorFlow</span><span class="chip chip-pink">PyTorch</span>
         </div>
       </div>
       <div class="sg reveal">
-        <div class="sg-icon">📊</div>
+        <div class="sg-icon">DA</div>
         <div class="sg-title">Data Analysis &amp; Analytics</div>
         <div class="sg-chips">
           <span class="chip chip-blue">Pandas</span><span class="chip chip-blue">NumPy</span><span class="chip chip-blue">Excel</span><span class="chip chip-blue">EDA</span><span class="chip chip-blue">Data Cleaning</span><span class="chip chip-blue">Statistical Analysis</span>
         </div>
       </div>
       <div class="sg reveal">
-        <div class="sg-icon">📈</div>
+        <div class="sg-icon">BI</div>
         <div class="sg-title">Data Visualization &amp; BI</div>
         <div class="sg-chips">
           <span class="chip chip-green">Power BI</span><span class="chip chip-green">Tableau</span><span class="chip chip-green">Matplotlib</span><span class="chip chip-green">Dashboard Dev</span><span class="chip chip-green">KPI Tracking</span>
         </div>
       </div>
       <div class="sg reveal">
-        <div class="sg-icon">🎯</div>
+        <div class="sg-icon">PA</div>
         <div class="sg-title">Product Analytics &amp; Growth</div>
         <div class="sg-chips">
           <span class="chip chip-amber">Mixpanel</span><span class="chip chip-amber">Amplitude</span><span class="chip chip-amber">Google Analytics</span><span class="chip chip-amber">Funnel Analysis</span><span class="chip chip-amber">A/B Testing</span>
         </div>
       </div>
       <div class="sg reveal">
-        <div class="sg-icon">🗺️</div>
+        <div class="sg-icon">PM</div>
         <div class="sg-title">Product Strategy &amp; Management</div>
         <div class="sg-chips">
           <span class="chip chip-coral">Product Roadmapping</span><span class="chip chip-coral">MVP Development</span><span class="chip chip-coral">Feature Prioritization</span><span class="chip chip-coral">Stakeholder Comms</span><span class="chip chip-coral">Design Thinking</span>
         </div>
       </div>
       <div class="sg reveal">
-        <div class="sg-icon">🗄️</div>
+        <div class="sg-icon">DB</div>
         <div class="sg-title">Databases</div>
         <div class="sg-chips">
           <span class="chip chip-cyan">MySQL</span><span class="chip chip-cyan">Database Design</span><span class="chip chip-cyan">Google Sheets API</span>
         </div>
       </div>
       <div class="sg reveal">
-        <div class="sg-icon">🔧</div>
+        <div class="sg-icon">OPS</div>
         <div class="sg-title">Tools &amp; Platforms</div>
         <div class="sg-chips">
           <span class="chip chip-purple">Firebase</span><span class="chip chip-purple">n8n</span><span class="chip chip-purple">REST APIs</span><span class="chip chip-purple">Git/GitHub</span><span class="chip chip-purple">ElevenLabs</span>
         </div>
       </div>
       <div class="sg reveal">
-        <div class="sg-icon">🤝</div>
+        <div class="sg-icon">TEAM</div>
         <div class="sg-title">Leadership &amp; Collaboration</div>
         <div class="sg-chips">
           <span class="chip chip-green">Team Coordination</span><span class="chip chip-green">Agile Execution</span><span class="chip chip-green">Program Management</span><span class="chip chip-green">Cross-functional Collab</span>
@@ -457,25 +469,45 @@ footer a{color:var(--cyan);text-decoration:none;}
         <div class="tcard">
           <div class="tcard-head">
             <div>
-              <div class="tcard-role">Technical Program Associate</div>
+              <div class="tcard-role">AI Software Trainee (Incoming AI Software Engineer – PPO)</div>
               <div class="tcard-co">EFOS.in</div>
             </div>
             <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
-              <span class="current-badge">🟢 Current</span>
-              <span class="tcard-date">Dec 2025 – Present</span>
+              <span class="current-badge"><span class="dot dot-green"></span>Current</span>
+              <span class="tcard-date">Jun 2026 – Present</span>
             </div>
           </div>
           <div class="tcard-desc">
             <ul>
-              <li>Received PPO after 6-month internship, transitioning to AI Software Engineer / AI Product Engineer role.</li>
-              <li>Scaled AI mentorship platform across schools and colleges, improving adoption, engagement, and retention using AI-driven features.</li>
-              <li>Built AI features, LLM systems, and AI agents using OpenAI APIs, LangChain, and prompt engineering.</li>
+              <li>Built epinfoways.com, a fully automated website for EFOS Pvt Ltd, from scratch — covering design, development, and deployment.</li>
+              <li>Building AI features, LLM systems, and AI agents using OpenAI APIs, LangChain, and prompt engineering.</li>
+              <li>Working toward a Pre-Placement Offer (PPO) transition into a full-time AI Software Engineer / AI Product Engineer role.</li>
+            </ul>
+          </div>
+          <div class="tcard-tags">
+            <span class="chip chip-cyan">LLM Systems</span><span class="chip chip-cyan">AI Agents</span><span class="chip chip-green">PPO In Progress</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="titem reveal">
+        <div class="tcard">
+          <div class="tcard-head">
+            <div>
+              <div class="tcard-role">Technical Support</div>
+              <div class="tcard-co">EFOS.in</div>
+            </div>
+            <span class="tcard-date">Dec 2025 – May 2026</span>
+          </div>
+          <div class="tcard-desc">
+            <ul>
+              <li>Supported an AI mentorship platform across multiple partner schools and colleges, strengthening adoption, engagement, and retention through AI-driven features.</li>
               <li>Developed Power BI dashboards for KPI tracking, user analytics, and product insights.</li>
               <li>Collaborated with engineering and product teams to ship AI-driven features and system improvements.</li>
             </ul>
           </div>
           <div class="tcard-tags">
-            <span class="chip chip-cyan">LLM Systems</span><span class="chip chip-cyan">AI Agents</span><span class="chip chip-cyan">Power BI</span><span class="chip chip-green">PPO Recipient</span>
+            <span class="chip chip-blue">Power BI</span><span class="chip chip-blue">KPI Tracking</span><span class="chip chip-blue">Cross-functional</span>
           </div>
         </div>
       </div>
@@ -491,11 +523,11 @@ footer a{color:var(--cyan);text-decoration:none;}
           </div>
           <div class="tcard-desc">
             <ul>
-              <li>Developed scalable web modules and backend APIs, enhancing platform reliability and performance.</li>
+              <li>Built Internboot, an internship-listing web platform, from the ground up — implementing backend automation to streamline listing management and application workflows.</li>
             </ul>
           </div>
           <div class="tcard-tags">
-            <span class="chip chip-cyan">JavaScript</span><span class="chip chip-cyan">Backend APIs</span><span class="chip chip-cyan">Platform Reliability</span>
+            <span class="chip chip-cyan">JavaScript</span><span class="chip chip-cyan">Backend Automation</span><span class="chip chip-cyan">Internboot</span>
           </div>
         </div>
       </div>
@@ -534,27 +566,27 @@ footer a{color:var(--cyan);text-decoration:none;}
 
       <div class="pcard featured reveal">
         <div class="pc-top">
-          <div class="pc-icon">🚀</div>
+          <div class="pc-icon">UL</div>
           <div class="pc-links">
             <a href="https://uplinkai.in" target="_blank" class="pc-link" title="Live Site" data-cursor="Visit">↗</a>
           </div>
         </div>
         <div class="pc-title">UpLinkAI — GenAI Career Guidance Platform</div>
-        <div class="pc-desc">Founded an AI-driven career guidance platform for student profiling, skill discovery, and personalized recommendations using GenAI. Designed a chatbot and quiz-based assessment system powered by LLMs for personalized learning insights, plus analytics dashboards for engagement tracking, funnel analysis, and product optimization.</div>
+        <div class="pc-desc">Built an AI-driven career guidance platform as a college project and DPIIT Startup India participant, for student profiling, skill discovery, and personalized recommendations using GenAI. Designed a chatbot and quiz-based assessment system powered by LLMs, plus analytics dashboards for engagement tracking, funnel analysis, and product optimization.</div>
         <div class="pc-tags">
           <span class="chip chip-cyan">LLM Chatbot</span><span class="chip chip-purple">OpenAI API</span><span class="chip chip-blue">Power BI</span><span class="chip chip-green">Funnel Analysis</span>
         </div>
         <div class="pc-stat">
-          <div class="pc-stat-item"><span>500+</span> Active Students</div>
+          <div class="pc-stat-item"><span>1,000+</span> Student Community</div>
           <div class="pc-stat-item"><span>9+</span> Partner Colleges</div>
-          <div class="pc-stat-item"><span>MVP</span> Live Stage</div>
+          <div class="pc-stat-item"><span>DPIIT</span> Participant</div>
         </div>
-        <div style="margin-top:10px;"><span class="pc-feat">🌟 Founder — Built From Scratch</span></div>
+        <div style="margin-top:10px;"><span class="pc-feat">College Project — Core Team</span></div>
       </div>
 
       <div class="pcard reveal">
         <div class="pc-top">
-          <div class="pc-icon">🤖</div>
+          <div class="pc-icon">EB</div>
           <div class="pc-links">
             <a href="#" class="pc-link" data-cursor="Live">↗</a>
           </div>
@@ -564,14 +596,14 @@ footer a{color:var(--cyan);text-decoration:none;}
         <div class="pc-tags">
           <span class="chip chip-purple">LLM</span><span class="chip chip-purple">AI Agents</span><span class="chip chip-pink">Prompt Engineering</span><span class="chip chip-green">Workflow Automation</span>
         </div>
-        <div style="margin-top:10px;"><span class="pc-feat">⚡ Live Inside EFOS Platform</span></div>
+        <div style="margin-top:10px;"><span class="pc-feat">Live Inside EFOS Platform</span></div>
       </div>
 
       <div class="pcard reveal">
         <div class="pc-top">
-          <div class="pc-icon">🗑️</div>
+          <div class="pc-icon">SD</div>
           <div class="pc-links">
-            <a href="https://github.com/saurabh" target="_blank" class="pc-link" data-cursor="Code">⌥</a>
+            <a href="https://github.com/Saurabh-techhub" target="_blank" class="pc-link" data-cursor="Code">⌥</a>
           </div>
         </div>
         <div class="pc-title">Smart Dustbin — IBM Challenge Finalist</div>
@@ -579,14 +611,14 @@ footer a{color:var(--cyan);text-decoration:none;}
         <div class="pc-tags">
           <span class="chip chip-amber">Arduino</span><span class="chip chip-amber">IoT</span><span class="chip chip-blue">IBM Cloud</span><span class="chip chip-purple">Time Series</span>
         </div>
-        <div style="margin-top:10px;"><span class="pc-feat">🏆 IBM Challenge Finalist</span></div>
+        <div style="margin-top:10px;"><span class="pc-feat">IBM Challenge Finalist</span></div>
       </div>
 
       <div class="pcard reveal">
         <div class="pc-top">
-          <div class="pc-icon">☀️</div>
+          <div class="pc-icon">SB</div>
           <div class="pc-links">
-            <a href="https://github.com/saurabh" target="_blank" class="pc-link" data-cursor="Code">⌥</a>
+            <a href="https://github.com/Saurabh-techhub" target="_blank" class="pc-link" data-cursor="Code">⌥</a>
           </div>
         </div>
         <div class="pc-title">ISRO Solar BIPV Assessment</div>
@@ -594,7 +626,7 @@ footer a{color:var(--cyan);text-decoration:none;}
         <div class="pc-tags">
           <span class="chip chip-green">CesiumJS</span><span class="chip chip-purple">TensorFlow</span><span class="chip chip-blue">Geospatial</span><span class="chip chip-purple">PyTorch</span>
         </div>
-        <div style="margin-top:10px;"><span class="pc-feat">🛰️ ISRO Research</span></div>
+        <div style="margin-top:10px;"><span class="pc-feat">ISRO Research</span></div>
       </div>
 
     </div>
@@ -605,24 +637,24 @@ footer a{color:var(--cyan);text-decoration:none;}
 <section id="uplinkai">
   <div class="ul-inner">
     <div class="ul-left reveal">
-      <div class="mvp-badge">🔥 MVP Stage — Active &amp; Growing</div>
-      <div class="ul-tag">Flagship Venture</div>
+      <div class="mvp-badge"><span class="dot dot-amber"></span>DPIIT Startup India Participant</div>
+      <div class="ul-tag">Flagship Project</div>
       <h2 class="ul-title">Meet<br/><em>UpLinkAI</em></h2>
-      <p class="ul-desc">My own GenAI career guidance platform — helping students discover skills, get AI-driven career recommendations, and prep for real opportunities. Built entirely from scratch: ideation, LLM integration, design, deployment, and college partnerships — all by me.</p>
+      <p class="ul-desc">A GenAI career guidance platform — helping students discover skills, get AI-driven career recommendations, and prep for real opportunities. Started as a college project, now a DPIIT Startup India participant, built with the core team: ideation, LLM integration, design, deployment, and college partnerships.</p>
       <div class="ul-metrics">
-        <div class="ul-m"><div class="mn">500+</div><div class="ml">Students</div></div>
+        <div class="ul-m"><div class="mn">1,000+</div><div class="ml">Students</div></div>
         <div class="ul-m"><div class="mn">9+</div><div class="ml">Colleges</div></div>
-        <div class="ul-m"><div class="mn">MVP</div><div class="ml">Live Stage</div></div>
+        <div class="ul-m"><div class="mn">DPIIT</div><div class="ml">Participant</div></div>
       </div>
       <a href="https://uplinkai.in" target="_blank" class="ul-link" data-cursor="Visit">Visit uplinkai.in ↗</a>
     </div>
     <div class="ul-right reveal">
       <div class="ul-feats">
-        <div class="ul-f"><div class="ul-fi">🤖</div><div><div class="ul-ft">AI Career Guidance Bot</div><div class="ul-fd">LLM-powered chatbot for personalized career direction</div></div></div>
-        <div class="ul-f"><div class="ul-fi">📝</div><div><div class="ul-ft">Quiz-Based Skill Assessment</div><div class="ul-fd">Personalized learning insights via LLM scoring</div></div></div>
-        <div class="ul-f"><div class="ul-fi">📊</div><div><div class="ul-ft">Engagement &amp; Funnel Analytics</div><div class="ul-fd">Dashboards for tracking adoption and drop-off</div></div></div>
-        <div class="ul-f"><div class="ul-fi">🎓</div><div><div class="ul-ft">College Partnerships</div><div class="ul-fd">Deployed and adopted across 9+ institutions</div></div></div>
-        <div class="ul-f"><div class="ul-fi">🧭</div><div><div class="ul-ft">Student Profiling</div><div class="ul-fd">GenAI-driven skill discovery and recommendations</div></div></div>
+        <div class="ul-f"><div class="ul-fi">BOT</div><div><div class="ul-ft">AI Career Guidance Bot</div><div class="ul-fd">LLM-powered chatbot for personalized career direction</div></div></div>
+        <div class="ul-f"><div class="ul-fi">QA</div><div><div class="ul-ft">Quiz-Based Skill Assessment</div><div class="ul-fd">Personalized learning insights via LLM scoring</div></div></div>
+        <div class="ul-f"><div class="ul-fi">KPI</div><div><div class="ul-ft">Engagement &amp; Funnel Analytics</div><div class="ul-fd">Dashboards for tracking adoption and drop-off</div></div></div>
+        <div class="ul-f"><div class="ul-fi">EDU</div><div><div class="ul-ft">College Partnerships</div><div class="ul-fd">Deployed and adopted across 9+ institutions</div></div></div>
+        <div class="ul-f"><div class="ul-fi">SP</div><div><div class="ul-ft">Student Profiling</div><div class="ul-fd">GenAI-driven skill discovery and recommendations</div></div></div>
       </div>
     </div>
   </div>
@@ -635,21 +667,21 @@ footer a{color:var(--cyan);text-decoration:none;}
     <h2 class="stitle reveal">Academic <em>Background</em></h2>
     <div class="edu-grid">
       <div class="edu-card reveal">
-        <div class="edu-icon">🎓</div>
+        <div class="edu-icon">B.TECH</div>
         <div class="edu-deg">B.Tech — CSE (Data Science)</div>
-        <div class="edu-school">Lamrin Tech Skills University</div>
-        <div class="edu-score">CGPA: 8.5</div>
-        <div class="edu-year">2023 – Present</div>
+        <div class="edu-school">Lamrin Tech Skills University, Ropar — in collaboration with IBM</div>
+        <div class="edu-score">CGPA: 9.0</div>
+        <div class="edu-year">2023 – 2027</div>
       </div>
       <div class="edu-card reveal">
-        <div class="edu-icon">📚</div>
+        <div class="edu-icon">XII</div>
         <div class="edu-deg">Class XII — CBSE</div>
         <div class="edu-school">Jawahar Navodaya Vidyalaya</div>
         <div class="edu-score">Score: 75.88%</div>
         <div class="edu-year">2022 – 2023</div>
       </div>
       <div class="edu-card reveal">
-        <div class="edu-icon">🏫</div>
+        <div class="edu-icon">X</div>
         <div class="edu-deg">Class X — CBSE</div>
         <div class="edu-school">Jawahar Navodaya Vidyalaya</div>
         <div class="edu-score">Score: 93.6%</div>
@@ -658,9 +690,9 @@ footer a{color:var(--cyan);text-decoration:none;}
     </div>
     <div class="stag" style="margin-top:2.5rem;margin-bottom:1.25rem;">Certifications</div>
     <div class="certs-row">
-      <div class="cert reveal"><span class="ci">📊</span><div><div class="ct">Power BI Data Visualization</div><div class="cs">IBM SkillsBuild</div></div></div>
-      <div class="cert reveal"><span class="ci">💡</span><div><div class="ct">Design Thinking Workshop</div><div class="cs">IBM SkillsBuild</div></div></div>
-      <div class="cert reveal"><span class="ci">🏅</span><div><div class="ct">Application Developer L5</div><div class="cs">NSDC/PMKVY — Grade A</div></div></div>
+      <div class="cert reveal"><span class="ci"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div><div class="ct">Power BI Data Visualization</div><div class="cs">IBM SkillsBuild</div></div></div>
+      <div class="cert reveal"><span class="ci"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div><div class="ct">Design Thinking Workshop</div><div class="cs">IBM SkillsBuild</div></div></div>
+      <div class="cert reveal"><span class="ci"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div><div class="ct">Application Developer L5</div><div class="cs">NSDC/PMKVY — Grade A</div></div></div>
     </div>
   </div>
 </section>
@@ -671,10 +703,10 @@ footer a{color:var(--cyan);text-decoration:none;}
     <div class="stag">06. Achievements</div>
     <h2 class="stitle reveal">Highlights &amp; <em>Awards</em></h2>
     <div class="ach-grid">
-      <div class="ach reveal"><span class="ach-icon">🏆</span><div class="ach-text"><strong>AIR 3 — IIIT Delhi 2025</strong>IndustrySolve Idea-Thon & Product-a-Thon.</div></div>
-      <div class="ach reveal"><span class="ach-icon">🎓</span><div class="ach-text"><strong>IIT Madras Qualified</strong>Qualified national entrance exam for BSc Data Science at IIT Madras.</div></div>
-      <div class="ach reveal"><span class="ach-icon">🏫</span><div class="ach-text"><strong>JNV Alumnus</strong>Alumnus of Jawahar Navodaya Vidyalaya — nationally recognized excellence school.</div></div>
-      <div class="ach reveal"><span class="ach-icon">🌐</span><div class="ach-text"><strong>B2 English Proficiency</strong>Certified via EF SET.</div></div>
+      <div class="ach reveal"><span class="ach-icon ach-amber"></span><div class="ach-text"><strong>AIR 3 — IIIT Delhi 2025</strong>IndustrySolve Idea-Thon & Product-a-Thon.</div></div>
+      <div class="ach reveal"><span class="ach-icon ach-cyan"></span><div class="ach-text"><strong>IIT Madras Qualified</strong>Qualified national entrance exam for BSc Data Science at IIT Madras.</div></div>
+      <div class="ach reveal"><span class="ach-icon ach-purple"></span><div class="ach-text"><strong>JNV Alumnus</strong>Alumnus of Jawahar Navodaya Vidyalaya — nationally recognized excellence school.</div></div>
+      <div class="ach reveal"><span class="ach-icon ach-green"></span><div class="ach-text"><strong>B2 English Proficiency</strong>Certified via EF SET.</div></div>
     </div>
   </div>
 </section>
@@ -686,18 +718,18 @@ footer a{color:var(--cyan);text-decoration:none;}
     <h2 class="stitle reveal">Let's <em>Connect</em></h2>
     <p class="reveal" style="color:var(--muted);font-size:14px;line-height:1.75;max-width:480px;margin:0 auto;">Open to AI Software Engineer, Data Science, and Product roles. Let's build something meaningful together.</p>
     <div class="clinks reveal">
-      <a href="mailto:saurabhtripathi8127@gmail.com" class="clink" data-cursor="Email"><span class="clink-icon">📧</span> Email</a>
-      <a href="https://linkedin.com/in/saurabh-tripathi" target="_blank" class="clink" data-cursor="Visit"><span class="clink-icon">💼</span> LinkedIn</a>
-      <a href="https://github.com/saurabh" target="_blank" class="clink" data-cursor="Visit"><span class="clink-icon">🐙</span> GitHub</a>
-      <a href="https://uplinkai.in" target="_blank" class="clink" data-cursor="Visit"><span class="clink-icon">🚀</span> UpLinkAI</a>
-      <a href="tel:+917234896280" class="clink" data-cursor="Call"><span class="clink-icon">📱</span> Call</a>
+      <a href="mailto:saurabhtripathi8127@gmail.com" class="clink" data-cursor="Email"><span class="clink-icon">MAIL</span> Email</a>
+      <a href="https://www.linkedin.com/in/saurabh-tripathi28" target="_blank" class="clink" data-cursor="Visit"><span class="clink-icon">IN</span> LinkedIn</a>
+      <a href="https://github.com/Saurabh-techhub" target="_blank" class="clink" data-cursor="Visit"><span class="clink-icon">GH</span> GitHub</a>
+      <a href="https://uplinkai.in" target="_blank" class="clink" data-cursor="Visit"><span class="clink-icon">↗</span> UpLinkAI</a>
+      <a href="tel:+917234896280" class="clink" data-cursor="Call"><span class="clink-icon">TEL</span> Call</a>
     </div>
   </div>
 </section>
 
 <footer>
   <p>Designed & Built by <a href="#">Saurabh Tripathi</a> — 2026</p>
-  <p>AI Software Engineer @ <a href="https://efos.in" target="_blank">EFOS</a> · Founder @ <a href="https://uplinkai.in" target="_blank">uplinkai.in</a> · saurabhtripathi8127@gmail.com</p>
+  <p>AI Software Trainee @ <a href="https://efos.in" target="_blank">EFOS</a> · Core Team @ <a href="https://uplinkai.in" target="_blank">uplinkai.in</a> · saurabhtripathi8127@gmail.com</p>
 </footer>
 
 <script>
@@ -746,25 +778,76 @@ const orbs=[
   {x:W*0.9,y:0,fy:H*0.72,r:110,t:2.4,sp:0.005,c:'77,159,255'},
 ];
 orbs.forEach(o=>o.y=o.fy);
+let orbScrollOffset=0;
+window.addEventListener('scroll',()=>{orbScrollOffset=window.scrollY*0.08;});
 
 function drawGrid(){ctx.strokeStyle='rgba(0,245,255,0.022)';ctx.lineWidth=1;const g=80;for(let x=0;x<W;x+=g){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}for(let y=0;y<H;y+=g){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}}
-function drawOrbs(){orbs.forEach(o=>{o.t+=o.sp;const oy=Math.sin(o.t)*28,ox=Math.cos(o.t*0.7)*18;const g=ctx.createRadialGradient(o.x+ox,o.y+oy,0,o.x+ox,o.y+oy,o.r);g.addColorStop(0,`rgba(${o.c},0.07)`);g.addColorStop(1,`rgba(${o.c},0)`);ctx.beginPath();ctx.arc(o.x+ox,o.y+oy,o.r,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();});}
+function drawOrbs(){orbs.forEach(o=>{o.t+=o.sp;const oy=Math.sin(o.t)*28,ox=Math.cos(o.t*0.7)*18;const sy=oy+orbScrollOffset*(o.r/90);const g=ctx.createRadialGradient(o.x+ox,o.y+sy,0,o.x+ox,o.y+sy,o.r);g.addColorStop(0,`rgba(${o.c},0.07)`);g.addColorStop(1,`rgba(${o.c},0)`);ctx.beginPath();ctx.arc(o.x+ox,o.y+sy,o.r,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();});}
 function connect(){for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<110){ctx.beginPath();ctx.strokeStyle=`rgba(0,245,255,${0.1*(1-d/110)})`;ctx.lineWidth=0.5;ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.stroke();}}}
 function animate(){ctx.clearRect(0,0,W,H);drawGrid();drawOrbs();pts.forEach(p=>{p.update();p.draw();});connect();requestAnimationFrame(animate);}
 animate();
 
-/* SCROLL REVEAL */
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.08});
+/* SCROLL REVEAL — staggered by sibling index within each grid/group */
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){
+  const delay=(e.target.dataset.staggerIndex||0)*70;
+  setTimeout(()=>e.target.classList.add('visible'),delay);
+}});},{threshold:0.08});
+document.querySelectorAll('.skills-grid,.pg,.edu-grid,.ach-grid,.certs-row,.timeline').forEach(group=>{
+  Array.from(group.children).forEach((child,i)=>{ if(child.classList.contains('reveal')) child.dataset.staggerIndex=i; });
+});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-/* 3D TILT */
-document.querySelectorAll('.pcard').forEach(c=>{
-  c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),dx=(e.clientX-r.left-r.width/2)/(r.width/2),dy=(e.clientY-r.top-r.height/2)/(r.height/2);c.style.transform=`translateY(-7px) rotateX(${-dy*5}deg) rotateY(${dx*5}deg)`;});
+/* SCROLL-LINKED HERO CINEMATIC FADE */
+const heroSection=document.getElementById('hero');
+let scrollY=0;
+window.addEventListener('scroll',()=>{
+  scrollY=window.scrollY;
+  const vh=window.innerHeight;
+  const p=Math.min(scrollY/vh,1);
+  if(heroSection){
+    heroSection.style.opacity=String(1-p*0.9);
+    heroSection.style.transform=`perspective(1200px) translateY(${p*60}px) rotateX(${p*6}deg) scale(${1-p*0.05})`;
+  }
+});
+if(heroSection){heroSection.style.transition='opacity 0.1s linear';heroSection.style.transformOrigin='50% 0%';}
+
+/* SCROLL PROGRESS BAR */
+const prog=document.createElement('div');
+prog.style.cssText='position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--cyan),var(--purple));z-index:300;transition:width 0.1s linear;box-shadow:0 0 8px rgba(0,245,255,0.6);';
+document.body.appendChild(prog);
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  const pct=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+  prog.style.width=pct+'%';
+});
+
+/* 3D TILT — extended to skills, timeline, education, achievement, and project cards */
+document.querySelectorAll('.pcard,.sg,.tcard,.edu-card,.ach,.fc,.astat,.cert').forEach(c=>{
+  c.style.transformStyle='preserve-3d';
+  c.addEventListener('mousemove',e=>{
+    const r=c.getBoundingClientRect(),dx=(e.clientX-r.left-r.width/2)/(r.width/2),dy=(e.clientY-r.top-r.height/2)/(r.height/2);
+    const tilt=c.classList.contains('pcard')?7:4;
+    c.style.transform=`translateY(-6px) rotateX(${-dy*tilt}deg) rotateY(${dx*tilt}deg)`;
+  });
   c.addEventListener('mouseleave',()=>{c.style.transform='translateY(0) rotateX(0) rotateY(0)';});
 });
 
+/* MOUSE PARALLAX ON HERO */
+const heroInner=document.querySelector('.hero-inner');
+if(heroInner){
+  document.getElementById('hero').addEventListener('mousemove',e=>{
+    const r=document.getElementById('hero').getBoundingClientRect();
+    const px=(e.clientX-r.left)/r.width-0.5, py=(e.clientY-r.top)/r.height-0.5;
+    heroInner.style.transform=`perspective(1200px) rotateY(${px*3}deg) rotateX(${-py*3}deg)`;
+  });
+  document.getElementById('hero').addEventListener('mouseleave',()=>{
+    heroInner.style.transform='perspective(1200px) rotateY(0) rotateX(0)';
+  });
+}
+heroInner.style.transition='transform 0.3s ease-out';
+
 /* TYPED */
-const titles=['AI Software Engineer','AI Product Engineer','Data Scientist','GenAI Builder','Founder @ UpLinkAI'];
+const titles=['AI Software Trainee',' AI Software Engineer','Data Scientist','GenAI Builder','Product Builder @ UpLinkAI'];
 let ti=0,ci=0,del=false,wait=0;
 const tel=document.getElementById('typed-el');
 setInterval(()=>{
